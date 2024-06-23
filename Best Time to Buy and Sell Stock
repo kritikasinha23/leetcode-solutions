@@ -1,0 +1,17 @@
+func maxProfit(_ prices: [Int]) -> Int {
+    if (prices.isEmpty) { return 0 }
+    var minBuy = prices[0]
+    var maxProfit = 0
+
+    for price in prices {
+        if price < minBuy {
+            minBuy = price
+        }
+        let potProfit = price - minBuy
+
+        if potProfit > maxProfit {
+            maxProfit = potProfit
+        }
+    }
+    return maxProfit
+}
