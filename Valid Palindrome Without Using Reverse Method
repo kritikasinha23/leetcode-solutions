@@ -1,0 +1,19 @@
+func isPalindrome(_ s: String) -> Bool {
+    let string = s.lowercased().filter{ $0.isLetter || $0.isNumber }
+
+    if string.isEmpty {
+        return true
+    }
+
+    var left = string.startIndex
+    var right = string.index(before: string.endIndex)
+
+    while left < right {
+        if string[left] != string[right] {
+            return false
+        }
+        left = string.index(after: left)
+        right = string.index(before: right)
+    }
+    return true
+}
