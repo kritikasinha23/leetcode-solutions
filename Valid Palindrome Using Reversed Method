@@ -1,0 +1,5 @@
+func isPalindrome(_ s: String) -> Bool {
+    let string = s.lowercased().filter{ $0.isLetter || $0.isNumber }
+    let result = (string == String(string.reversed()))
+    return result
+}
