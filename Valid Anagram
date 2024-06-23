@@ -1,0 +1,18 @@
+func isAnagram(_ s: String, _ t: String) -> Bool {
+    if s.count != t.count {
+        return false
+    }
+
+    var countOfS = [Character:Int]()
+    var countOfT = [Character:Int]()
+
+    for char in s {
+        countOfS[char, default: 0] += 1
+    }
+
+    for char in t {
+        countOfT[char, default: 0] += 1
+    }
+
+    return countOfS == countOfT
+}
